@@ -30,6 +30,27 @@
             <p>
               Pour assurer la sécurité de notre infrastructure, nous avons configuré un pare-feu pfSense avec des règles de filtrage adaptées pour chaque machine virtuelle. Les règles permettent aux clients Windows et Linux d'accéder au serveur web et aux ressources de sauvegarde, tout en empêchant les accès non autorisés.
             </p>
+            <h1>Règles de pare-feu pour les VMs :</h1>
+            <h2>Client Windows</h2>
+                <ul>
+                    <li>Autoriser les connexions entrantes sur le port 80 (HTTP) pour accéder au site web</li>
+                </ul>
+
+            <h2>VM Debian - Serveur Web</h2>
+                <ul>
+                    <li>Autoriser les connexions entrantes sur le port 80 (HTTP) pour accéder au site web</li>
+                    <li>Autoriser les connexions entrantes sur le port 22 (SSH) pour la gestion à distance</li>
+                </ul>
+
+            <h2>VM Debian - Sauvegarde Web</h2>
+                <ul>
+                     <li>Autoriser les connexions entrantes sur le port 22 (SSH) pour la gestion à distance et les transferts de fichiers via rsync</li>
+                </ul>
+
+            <h2>VM Debian - Client Linux</h2>
+        <ul>
+            <li>Autoriser les connexions entrantes sur le port 22 (SSH) pour la gestion à distance</li>
+         </ul>
             <section>
                 <h2>Tableau de filtrage</h2>
                 <p>
