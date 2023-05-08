@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRA SI</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Projet Infra Si Gendron Boutte</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="exploitation.html">Documentation d'exploitation</a></li>
+            <li><a href="tutoriel.html">Tutoriel</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="objectives">
+            <h2>Objectifs du projet</h2>
+            <p>
+              Le but de ce projet était de mettre en place une infrastructure réseau sécurisée avec un serveur web, un système de sauvegarde et une interconnexion entre les clients Windows et Linux. Nous avons également mis en place un pare-feu pfSense pour sécuriser notre réseau et contrôler l'accès aux ressources.
+            </p>
+          </section>
+          <section id="security">
+            <h2>Sécurité</h2>
+            <p>
+              Pour assurer la sécurité de notre infrastructure, nous avons configuré un pare-feu pfSense avec des règles de filtrage adaptées pour chaque machine virtuelle. Les règles permettent aux clients Windows et Linux d'accéder au serveur web et aux ressources de sauvegarde, tout en empêchant les accès non autorisés.
+            </p>
+            <section>
+                <h2>Tableau de filtrage</h2>
+                <p>
+                  Le tableau de filtrage du pare-feu pfSense est présenté ci-dessous :
+                </p>
+                <img src="ASSETS-INFRA/tableau de filtrage.png" alt="Tableau de filtrage" width="600" />
+              </section>
+              
+          </section>
+          
+        <section>
+            <h2>Architecture du projet</h2>
+            <section>
+                <h2>Schéma réseau</h2>
+                <p>
+                  Vous trouverez ci-dessous le schéma du réseau de notre projet :
+                </p>
+                <img src="ASSETS-INFRA/schema réseau.png" alt="Schéma réseau" width="600" height="600"  />
+              </section>
+            <p>1.Définition du réseau, des hôtes et répartition des services<br>
+                -Réseau : 192.168.1.0/24 <br>
+                -Pare-feu pfSense : 192.168.1.1 <br>
+                -Client Windows : 192.168.1.10 <br>
+                -VM Debian - Serveur Web : 192.168.1.20 <br>
+                -VM Debian - Sauvegarde Web : 192.168.1.30 <br>
+                -VM Debian - Client Linux : 192.168.1.40 <br>
+                -Répartition des services : <br>
+                    -Serveur Web : Héberge le site web et la documentation <br>
+                    -Sauvegarde Web : Stocke les sauvegardes du site web <br>
+                    -Clients : Accèdent au site web et à la documentation <br>
+                2.Mise en œuvre des bonnes pratiques : <br>
+
+                -Utilisation d'un pare-feu pfSense pour sécuriser le réseau et les VM <br>
+                -Création de règles de pare-feu spécifiques pour chaque VM <br>
+                -Mise à jour régulière des systèmes et des logiciels <br>
+                -Utilisation de mots de passe sécurisés et de clés SSH pour l'authentification <br>
+                -Configuration des services pour n'écouter que les interfaces nécessaires <br>
+                3.Configuration système, réseau et services : <br>
+
+                -Configuration des adresses IP statiques pour chaque VM <br>
+                -Configuration de la passerelle et des serveurs DNS pour chaque VM <br>
+                -Installation et configuration d'un serveur web (Apache) sur la VM du serveur Web <br>
+                -Configuration des sauvegardes automatiques sur la VM de sauvegarde Web <br>
+                -Configuration des clients pour accéder au site web et à la documentation</p>
+        </section>
+        <section>
+            <h2>Plan d'adressage</h2>
+            <p>-Réseau : 192.168.1.0/24 <br>
+            -Pare-feu pfSense : 192.168.1.1 <br>
+            -Client Windows : 192.168.1.10 <br>
+            -VM Debian - Serveur Web : 192.168.1.20 <br>
+            -VM Debian - Sauvegarde Web : 192.168.1.30 <br>
+            -VM Debian - Client Linux : 192.168.1.40</p>
+        </section>
+        <!-- Ajouter d'autres sections si nécessaire -->
+    </main>
+</body>
+</html>

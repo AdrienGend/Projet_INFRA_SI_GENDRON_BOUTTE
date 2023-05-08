@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRA SI</title>
+    <link rel=stylesheet href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Projet Infra Si Gendron Boutte</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="exploitation.html">Documentation d'exploitation</a></li>
+            <li><a href="tutoriel.html">Tutoriel</a></li>
+        </ul>
+    </nav>
+    <h1>Tutoriel de configuration des VMs</h1>
+    <p>Dans ce tutoriel, nous expliquerons comment configurer chaque machine virtuelle (VM) et installer les services nécessaires.</p>
+
+    <h2>Configuration des VMs</h2>
+    <p>Voici les étapes pour configurer chaque VM :</p>
+    <h3>1. Pare-feu pfSense</h3>
+    <ol>
+        <li>Étape 1 : Installer pfSense sur une nouvelle VM avec deux interfaces réseau (WAN et LAN).</li>
+        <li>Étape 2 : Configurer l'adresse IP de l'interface LAN (ex : 192.168.1.1/24).</li>
+        <li>Étape 3 : Configurer les règles de filtrage dans pfSense pour autoriser le trafic entre les VMs et l'accès à Internet.</li>
+    </ol>
+
+    <h3>2. Client Windows</h3>
+    <ol>
+        <li>Étape 1 : Installer Windows sur une nouvelle VM.</li>
+        <li>Étape 2 : Configurer l'adresse IP statique, la passerelle et le DNS (ex : IP 192.168.1.10, passerelle 192.168.1.1, DNS 8.8.8.8).</li>
+    </ol>
+
+    <h3>3. Serveur Web Debian</h3>
+    <ol>
+        <li>Étape 1 : Installer Debian sur une nouvelle VM.</li>
+        <li>Étape 2 : Configurer l'adresse IP statique, la passerelle et le DNS (ex : IP 192.168.1.20, passerelle 192.168.1.1, DNS 8.8.8.8).</li>
+    </ol>
+
+    <h3>4. Sauvegarde Web Debian</h3>
+    <ol>
+        <li>Étape 1 : Installer Debian sur une nouvelle VM.</li>
+        <li>Étape 2 : Configurer l'adresse IP statique, la passerelle et le DNS (ex : IP 192.168.1.30, passerelle 192.168.1.1, DNS 8.8.8.8).</li>
+    </ol>
+
+    <h3>5. Client Linux Debian</h3>
+    <ol>
+        <li>Étape 1 : Installer Debian sur une nouvelle VM.</li>
+        <li>Étape 2 : Configurer l'adresse IP statique, la passerelle et le DNS (ex : IP 192.168.1.40, passerelle 192.168.1.1, DNS 8.8.8.8).</li>
+    </ol>
+
+    <h2>Installation d'Apache sur le serveur Web Debian</h2>
+    <ol>
+        <li>Étape 1 : Mettre à jour la liste des paquets avec la commande `sudo apt update`.</li>
+        <li>Étape 2 : Installer Apache avec la commande `sudo apt install apache2`
+            <li>Étape 3 : Vérifier le statut d'Apache avec la commande `sudo systemctl status apache2`.</li>
+            <li>Étape 4 : Configurer le pare-feu pour autoriser le trafic HTTP et HTTPS avec les commandes `sudo ufw allow http` et `sudo ufw allow https`.</li>
+            <li>Étape 5 : Placer les fichiers de votre site Web dans le répertoire `/var/www/html`.</li>
+        </ol>
+    
+        <h2>Installation de rsync sur le serveur de sauvegarde Web Debian</h2>
+        <ol>
+            <li>Étape 1 : Mettre à jour la liste des paquets avec la commande `sudo apt update`.</li>
+            <li>Étape 2 : Installer rsync avec la commande `sudo apt install rsync`.</li>
+            <li>Étape 3 : Configurer la sauvegarde automatique du site Web avec un script shell et une tâche cron.</li>
+        </ol>
+    
+    </body>
+    </html>
+</body>
+</html>
